@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контроль знаний</title>
+    <style>
+        /* Стили для задания 1 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .form-container {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"],
+        .form-container input[type="email"],
+        .form-container textarea {
+            width: 95%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-container input[type="text"]:invalid,
+        .form-container input[type="password"]:invalid,
+        .form-container input[type="email"]:invalid,
+        .form-container textarea:invalid {
+            border-color: red;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 7px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        .validation-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .success-message {
+            color: green;
+            margin-top: 10px;
+        }
+
+        /* Стили для изображения в задании 1 */
+        .image-container {
+            margin-top: 17px;
+            text-align: center;
+            position: relative;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            transition: all 0.3s;
+        }
+
+        .highlight {
+            border: 1px solid red;
+        }
+
+        .moved {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(-50%, 50%);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Задание 1 -->
+    <h1>Фамилия Имя Отчество: Пузан Артём Алексеевич</h1>
+    <p>Мой любимый сайт: <a href="https://www.youtube.com/">URL</a></p>
+    <div class="image-container">
+        <img src="Untitled.png" alt="Изображение" id="mainImage">
+    </div>
+
+    <div class="form-container">
+        <form id="userForm">
+            <h2>Вход</h2>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Войти</button>
+        </form>
+        <div id="validationMessage" class="validation-message"></div>
+    </div>
+
+    <!-- Задание 2 -->
+    <button id="toggleButton" onclick="toggleAction()">Дата модификации</button>
+    <p id="lastModified"></p>
+
+    <script>
+        let imageRemoved = false;
+
+        function toggleAction() {
+            const button = document.getElementById('toggleButton');
+            const imageContainer = document.querySelector('.image-container');
+            const lastModified = document.getElementById('lastModified');
+
+            if (!imageRemoved) {
+                imageContainer.removeChild(document.getElementById('mainImage'));
+                const dateModified = document.lastModified;
+                lastModified.innerText = `Дата модификации: ${dateModified}`;
+                button.innerText = 'Показать изображение';
+                imageRemoved = true;
+            } else {
+                // В этом случае, изображение восстанавливается
+                const img = document.createElement('img');
+                img.src = 'Untitled.png';
+                img.alt = 'Изображение';
+                img.id = 'mainImage';
+                imageContainer.appendChild(img);
+                lastModified.innerText = '';
+                button.innerText = 'Дата модификации';
+                imageRemoved = false;
+            }
+        }
+    </script>
+
+    <!-- Задание 3 -->
+    <button onclick="changeStyle()">Сменить стиль</button>
+
+    <script>
+        function changeStyle() {
+            const image = document.getElementById('mainImage');
+            image.style.width = '200px';
+            image.style.height = '200px';
+            image.classList.add('highlight');
+            image.classList.add('moved');
+        }
+    </script>
+
+    <!-- Задание 4 -->
+    <form id="orderForm" onsubmit="return validateForm()">
+        <h2>Форма заказа</h2>
+        <label for="product">Товар:</label>
+        <input type="text" id="product" name="product" required>
+        <label for="quantity">Количество:</label>
+        <input type="number" id="quantity" name="quantity" required min="1" max="10">
+        <label for="address">Адрес доставки:</label>
+        <textarea id="address" name="address" required></textarea>
+        <button type="submit">Отправить</button>
+        <div id="orderValidationMessage" class="validation-message"></div>
+    </form>
+
+    <script>
+        function validateForm() {
+            const product = document.getElementById('product');
+            const quantity = document.getElementById('quantity');
+            const address = document.getElementById('address');
+            const validationMessage = document.getElementById('orderValidationMessage');
+
+            let isValid = true;
+
+            if (!product.value) {
+                product.classList.add('highlight');
+                isValid = false;
+            } else {
+                product.classList.remove('highlight');
+            }
+
+            if (quantity.value < 1 || quantity.value > 10) {
+                quantity.classList.add('highlight');
+                isValid = false;
+            } else {
+                quantity.classList.remove('highlight');
+            }
+
+            if (!address.value) {
+                address.classList.add('highlight');
+                isValid = false;
+            } else {
+                address.classList.remove('highlight');
+            }
+
+            if (!isValid) {
+                validationMessage.innerText = 'Пожалуйста, заполните все поля корректно!';
+                validationMessage.classList.add('validation-message');
+                return false;
+            }
+
+            validationMessage.innerText = 'Форма успешно отправлена!';
+            validationMessage.classList.remove('validation-message');
+            validationMessage.classList.add('success-message');
+            return true;
+        }
+
+        document.getElementById('userForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const validationMessage = document.getElementById('validationMessage');
+
+            if (!email || !password) {
+                validationMessage.innerText = 'Все поля должны быть заполнены!';
+                document.getElementById('email').classList.add('highlight');
+                document.getElementById('password').classList.add('highlight');
+            } else {
+                validationMessage.innerText = 'Форма успешно отправлена!';
+                validationMessage.classList.remove('validation-message');
+                validationMessage.classList.add('success-message');
+                document.getElementById('email').classList.remove('highlight');
+                document.getElementById('password').classList.remove('highlight');
+            }
+        });
+    </script>
+
+</body>
+</html>

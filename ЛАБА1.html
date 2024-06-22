@@ -1,0 +1,869 @@
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Portfolio of Артём Пузан">
+        <meta name="keywords" content="portfolio, skills, experience, projects">
+        <meta name="author" content="Артём Пузан">
+        <title>Пузан Артём портфолио</title>
+        <style>
+            /* Базовые стили для body */
+            body {
+                font-family: 'Arial', sans-serif;
+                line-height: 1.6;
+                background: linear-gradient(to right, #ff9966, #ff5e62);
+                color: #333;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            /* Стили для ссылок */
+            a {
+                color: #0066cc;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            a:hover {
+                color: #ff5e62;
+            }
+
+            /* Стили для заголовков */
+            h1, h2, h3, h4, h5, h6 {
+                color: #fff;
+                text-align: left;
+                margin: 20px 0 10px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            h7 {
+                color:#333
+            }   
+
+            /* Стили для списков */
+            ul, ol {
+                padding-left: 20px;
+                color: #fff;
+            }
+
+            /* Контейнер для навигации */
+            nav {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                justify-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            /* Стили для кнопок */
+            .button-link {
+                display: block;
+                background-color: #ff5e62;
+                color: #fff;
+                padding: 15px 30px;
+                border-radius: 5px;
+                text-decoration: none;
+                text-align: center;
+                font-size: 1.2em;
+                transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+            }
+
+            .button-link:hover {
+                background-color: #e05252;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+                transform: translateY(-5px);
+            }
+
+            .button-link:active {
+                background-color: #c04545;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                transform: translateY(0);
+            }
+
+            /* Стили для секций */
+            section {
+                display: grid;
+                grid-template-columns: 1fr;
+                background: rgba(255, 255, 255, 0.5);
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Стили для секции с фотографиями */
+            .photo-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 10px;
+            }
+
+            /* Стили для изображений */
+            .photo-container img {
+                width: 100%;
+                height: auto;
+                border: 3px solid #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s;
+            }
+
+            .photo-container img:hover {
+                transform: scale(1.05);
+            }
+
+            /* Стили для медиа-контента */
+            audio, video {
+                width: 100%;
+                margin-bottom: 20px;
+                border-radius: 10px;
+            }
+
+            /* Стили для таблицы */
+            table {
+                width: 100%;
+                margin-bottom: 15px;
+                border-collapse: collapse;
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            table, th, td {
+                border: 1px solid #ddd;
+            }
+
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+
+            th {
+                background: #ff5e62;
+                color: #fff;
+            }
+
+            /* Стили для формы */
+            form {
+                width: 97.5%;
+                padding: 15px;
+                background: rgba(255, 255, 255, 0.9);
+                margin-bottom: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            label {
+                color: #333;
+                font-weight: bold;
+            }
+
+            input[type="text"], input[type="email"], select, textarea {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            input[type="submit"] {
+                background: #ff5e62;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            input[type="submit"]:hover {
+                background: #e05252;
+            }
+
+            /* Стили для спецсимволов и ссылок */
+            p {
+                text-align: center;
+                color: #fff;
+            }
+
+            /* Центрирование текста */
+            .center-text {
+                text-align: center;
+            }
+
+            /* Центрирование ссылки */
+            .centered-link {
+                text-align: center;
+                display: block;
+                margin: 20px 0;
+                font-size: 1.2em;
+            }
+            .order-form {
+                width: 97.5%;
+                padding: 15px;
+                background: rgba(255, 255, 255, 0.9);
+                margin-bottom: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .order-form label {
+                color: #333;
+                font-weight: bold;
+            }
+
+            .order-form input[type="text"], .order-form input[type="email"], .order-form input[type="tel"], .order-form select, .order-form textarea {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            .order-form input[type="submit"] {
+                background: #ff5e62;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            .order-form input[type="submit"]:hover {
+                background: #e05252;
+            }
+        .product-card {
+                width: 250px;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                text-align: center;
+                position: relative;
+                font-family: Arial, sans-serif;
+                margin: 0 auto; /* добавлено для выравнивания по центру */
+            }
+            .product-card img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+            .product-card .heart,
+            .product-card .cart {
+                position: absolute;
+                top: 10px;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            .product-card .heart {
+                left: 30px;
+                margin-top: 15px;
+                color: #666;
+            }
+            .product-card .cart {
+                right: 30px;
+                margin-top: 15px;
+                color: #666;
+            }
+            .product-card .credit,
+            .product-card .installment {
+                font-size: 12px;
+                color: #e91e63;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            .product-card .installment {
+                color: #ff6f00;
+            }
+            .product-card .category {
+                font-size: 14px;
+                color: #777;
+                margin-top: 10px;
+            }
+            .product-card .title {
+                font-size: 16px;
+                color: #333;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            .product-card .price-container {
+                margin-top: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: baseline;
+            }
+            .product-card .price {
+                font-size: 22px;
+                color: #e91e63;
+                font-weight: bold;
+            }
+            .product-card .old-price {
+                font-size: 14px;
+                color: #888;
+                text-decoration: line-through;
+                margin-left: 10px;
+            }
+            .product-card .bonus {
+                margin-top: 10px;
+                font-size: 12px;
+                color: #555;
+            }
+            .product-card .note {
+                font-size: 10px;
+                color: #777;
+                margin-top: 10px;
+            }
+            /* Медиазапросы */
+
+            /* Адаптация для телефонов (до 600px) */
+            @media (max-width: 600px) {
+                body {
+                    padding: 10px;
+                    gap: 10px;
+                }
+                table {
+                    display: block;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                }
+
+                table, th, td {
+                    display: inline-block;
+                    min-width: 100px; /* Ширина минимальной ячейки */
+                }
+
+                th, td {
+                    vertical-align: top;
+                }
+                nav {
+                    grid-template-columns: 1fr;
+                    gap: 10px;
+                }
+
+                .photo-container {
+                    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                    gap: 5px;
+                }
+
+                table, form {
+                    width: 100%;
+                    padding: 10px;
+                }
+
+                input[type="text"], input[type="email"], select, textarea {
+                    padding: 8px;
+                    margin: 5px 0;
+                }
+
+                input[type="submit"] {
+                    padding: 8px 16px;
+                }
+
+                .centered-link {
+                    font-size: 1em;
+                }
+            }
+
+            /* Адаптация для планшетов (600px - 900px) */
+            @media (min-width: 601px) and (max-width: 900px) {
+                body {
+                    padding: 15px;
+                    gap: 15px;
+                }
+
+                nav {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 15px;
+                }
+
+                .photo-container {
+                    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+                    gap: 10px;
+                }
+
+                table, form {
+                    width: 100%;
+                    padding: 15px;
+                }
+
+                input[type="text"], input[type="email"], select, textarea {
+                    padding: 9px;
+                    margin: 7px 0;
+                }
+
+                input[type="submit"] {
+                    padding: 9px 18px;
+                }
+
+                .centered-link {
+                    font-size: 1.1em;
+                }
+            }
+
+            /* Адаптация для ноутбуков и малых десктопов (900px - 1200px) */
+            @media (min-width: 901px) and (max-width: 1200px) {
+                body {
+                    padding: 20px;
+                    gap: 20px;
+                }
+
+                nav {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+
+                .photo-container {
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    gap: 15px;
+                }
+
+                table, form {
+                    width: 100%;
+                    padding: 20px;
+                }
+
+                input[type="text"], input[type="email"], select, textarea {
+                    padding: 10px;
+                    margin: 10px 0;
+                }
+
+                input[type="submit"] {
+                    padding: 10px 20px;
+                }
+
+                .centered-link {
+                    font-size: 1.2em;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="#section1" class="button-link">Первый раздел</a>   
+            <a href="#section2" class="button-link">Второй раздел</a>   
+            <a href="#section3" class="button-link">Третий раздел</a>
+        </nav>
+
+        <section id="section1">
+            <h1>Обо мне</h1> 
+            <p>Привет, меня зовут Артём и мне 18 лет. Меня интересует программирование, съёмка видео, а также рисование.</p>
+            
+            <h2>Умения</h2> 
+            <ul>
+                <li>Pascal</li>
+                <li>Python</li>
+                <li>JS</li>
+                <li>C#</li>
+                <li>Adobe</li>
+            </ul>
+            
+            <h2>Любимые блюда</h2> 
+            <ol>
+                <li>Суши</li>
+                <li>Макароны с сыром</li>
+                <li>Пицца</li>
+            </ol>
+            
+            <h2>Увлечения</h2> 
+            <ul>
+                <li>Видеосъёмка</li>
+                <li>Программирование</li>
+                <li>Танцы</li>
+            </ul>
+            
+            <h2>Любимые языки программирования</h2> 
+            <ol>
+                <li>LS</li>
+                <li>C#</li>
+                <li>Python</li>
+            </ol>
+        </section>
+
+        <section id="section2">
+            <h2>Мои фотки</h2>
+            <div class="photo-container">
+                <img src="photo_2024-06-07_09-41-59.jpg" alt="Моё фото 1">
+                <img src="IMG_9818.jpg" alt="Моё фото 2">
+            </div>
+        </section>
+
+        <section id="section3">
+            <h2>Любимый трек и видео</h2>
+            <audio controls>
+                <source src="alblak-52-7-952-812-mp3.mp3" type="audio/mpeg">
+            </audio>
+            
+            <video width="320" height="240" controls>
+                <source src="Patrick Bateman Sigma Meme Template.mp4" type="video/mp4">
+            </video>
+        </section>
+
+        <section>
+            <h2 class="center-text">Персональная информация</h2>
+            <table>
+                <tr>
+                    <th>Имя</th>
+                    <th>Email</th>
+                    <th>Фамилия</th>
+                    <th>Инстаграм</th>
+                    <th>Вконтакте</th>
+                </tr>
+                <tr>
+                    <td>Артём</td>
+                    <td>arrtyom.puzan1@gmail.com</td>
+                    <td>Пузан</td>
+                    <td><a href="https://www.instagram.com/artyom_puzan/">Instagram</a></td>
+                    <td><a href="https://vk.com/artym.puzan">Вконтакте</a></td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Форма регистрации</h2>
+            <form action="/submit_form_data" method="POST">
+                <label for="name">Имя:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                
+                <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                <label for="subscribe">Подпишись на новости</label><br><br>
+                
+                <label for="country">Выберите страну:</label><br>
+                <select id="country" name="country">
+                    <option value="belarus">Беларусь</option>
+                    <option value="russia">Россия</option>
+                    <option value="ukraine">Украина</option>
+                    <option value="china">Китай</option>
+                </select><br><br>
+                
+                <label>Выберите свой пол:</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Мужчина</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Женщина</label><br><br>
+                <label for="memo">Отправьте нам своё предложение:</label><br>
+                <textarea id="memo" name="memo" rows="4" cols="50"></textarea><br><br>
+                
+                <input type="submit" value="Подтвердить">
+            </form>
+        </section>
+
+        <section>
+            <h2 class="center-text">Оформить заказ</h2>
+            <form action="/submit_order" method="POST" class="order-form">
+                <label for="fullname">Имя Отчество:</label>
+                <input type="text" id="fullname" name="fullname" required><br>
+
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required><br>
+
+                <label for="city">Город:</label>
+                <input type="text" id="city" name="city"><br>
+
+                <label for="postal">Почтовый индекс:</label>
+                <input type="text" id="postal" name="postal"><br>
+
+                <label for="address">Адрес:</label>
+                <input type="text" id="address" name="address"><br>
+
+                <label for="region">Регион / Область:</label>
+                <select id="region" name="region" required>
+                    <option value="">---Выберите---</option>
+
+                    <option value="moscow">Минск</option>
+                    <option value="spb">Гродно</option>
+                    <option value="spb">Гомель</option>
+                    <option value="spb">Барановичи</option>
+                    <option value="spb">Брест</option>
+
+                </select><br>
+
+                <p></p>
+                <h7>Выберите удобный способ доставки для этого заказа:</h7><br>
+                <input type="radio" id="fixed-rate" name="delivery" value="fixed" checked>
+                <label for="fixed-rate">Фиксированная стоимость доставки - $5.00</label><br>
+                
+                <p></p>
+                <h7>Выберите способ оплаты для этого заказа:</h7><br>
+                <input type="radio" id="cod" name="payment" value="cod" checked>
+                <label for="cod">Оплата при доставке</label><br>
+
+                <p></p>
+                <label for="comments">Комментарии к заказу:</label><br>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+                <input type="submit" value="Оформить">
+            </form>
+        </section>
+
+        <section>
+            <h2 class="center-text">Мои ссылки</h2>
+            <div class="centered-link">
+                <a href="https://github.com/Puzya18">My GitHub</a>
+            </div>
+            <div class="centered-link">
+                <a href="https://www.instagram.com/artyom_puzan/">Instagram</a>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="center-text">Спецсимволы</h2>
+            <p>&#169; 2024 Пузан Артём</p>
+        </section>
+
+    </section>
+        <div class="product-card">
+            <div class="heart">❤</div>
+            <div class="cart">🛒</div>
+            <img src="svet.png" alt="Светодиодная лента">
+            <div class="credit">КРЕДИТ ДО <b>36 МЕС</b></div>
+            <div class="installment">РАССРОЧКА ДО <b>6 МЕС</b></div>
+            <div class="category">Потолочные светильники</div>
+            <div class="title">Светодиодная RGB лента Таро L920-5</div>
+            <div class="price-container">
+                <div class="price">199.00</div>
+                <div class="old-price">242.68</div>
+            </div>
+            <div class="bonus">Вернём до <b>7.28</b> на <u>бонусную карту</u></div>
+            <div class="note">*тип рассрочки при которой скидка не действует</div>
+        </div>
+    </section>
+
+    <title>Примеры диалоговых окон</title>
+
+    </head>
+    <body>
+    <button onclick="showAlert()">Показать alert</button>
+    <button onclick="showConfirm()">Показать confirm</button>
+    <button onclick="showPrompt()">Показать prompt</button>
+
+    <title>Примеры операторов JavaScript</title>
+    <script>
+        function exampleOperators() {
+            // Оператор if
+            let num = 10;
+            if (num > 5) {
+                alert("Число больше 5");
+            }
+
+            // Оператор switch
+            let day = 3;
+            switch (day) {
+                case 1:
+                    alert("Понедельник");
+                    break;
+                case 2:
+                    alert("Вторник");
+                    break;
+                case 3:
+                    alert("Среда");
+                    break;
+                default:
+                    alert("Неизвестный день");
+            }
+
+            // Оператор for
+            for (let i = 0; i < 3; i++) {
+                console.log("Итерация " + i);
+            }
+
+            // Оператор while
+            let count = 0;
+            while (count < 3) {
+                console.log("Счётчик " + count);
+                count++;
+            }
+
+            // Оператор do...while
+            let x = 0;
+            do {
+                console.log("Значение x " + x);
+                x++;
+            } while (x < 3);
+
+            // Оператор break и continue
+            for (let i = 0; i < 5; i++) {
+                if (i === 2) continue;
+                if (i === 4) break;
+                console.log("Значение " + i);
+            }
+
+            // Оператор return
+            function sum(a, b) {
+                return a + b;
+            }
+            alert("Сумма 2 и 3: " + sum(2, 3));
+        }
+    </script>
+
+    </head>
+    <body onload="exampleOperators()">
+
+        <title>Примеры JavaScript интеграции</title>
+        <!-- Внешний файл JavaScript -->
+        <script src="external.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Атрибут события HTML -->
+        <button onclick="alert('атрибут события')">Нажми меня</button>
+        
+        <!-- Встроенный JavaScript в атрибуте HTML -->
+        <a href="javascript:alert('Это сообщение по URL ссылке');">Нажмите для сообщения</a>
+        
+        <!-- Встроенный JavaScript в атрибутах HTML -->
+        <button onclick="document.getElementById('demo').innerHTML = 'Изменён текст'">Изменить текст</button>
+        <p id="demo">Текст для изменения</p>
+
+        <title>Выполнение заданий</title>
+        <script>
+            function showCurrentMinutes() {
+                const now = new Date();
+                const minutes = now.getMinutes();
+                alert("Текущее количество минут: " + minutes);
+            }
+    
+            function calculate(a, x, b, c) {
+                let y;
+    
+                if (a < 0 && c !== 0) {
+                    y = a * Math.pow(x, 2) + a * b + c;
+                } else if (a > 0 && c === 0) {
+                    if (x === c) {
+                        alert("Ошибка: деление на ноль");
+                        return;
+                    }
+                    y = -a / (x - c);
+                } else {
+                    y = a * (x + c);
+                }
+    
+                return y;
+            }
+    
+            function calculateFromInput() {
+                const a = parseFloat(document.getElementById('a').value);
+                const x = parseFloat(document.getElementById('x').value);
+                const b = parseFloat(document.getElementById('b').value);
+                const c = parseFloat(document.getElementById('c').value);
+    
+                if (isNaN(a) || isNaN(x) || isNaN(b) || isNaN(c)) {
+                    alert("Пожалуйста, введите корректные числовые значения.");
+                    return;
+                }
+    
+                const result = calculate(a, x, b, c);
+                document.getElementById('mathOutput').innerHTML = `Результат вычислений: ${result}`;
+            }
+    
+            window.onload = function() {
+                // Пример вызова функции для демонстрации
+                // document.getElementById('mathOutput').innerHTML = `Пример: ${calculate(-2, 4, 3, 5)}`;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Выполнение заданий</h1>
+    
+        <!-- Задание 1: Работа с объектом Date -->
+        <button onclick="showCurrentMinutes()">Показать текущее количество минут</button>
+    
+        <hr>
+    
+        <!-- Задание 2: Работа с циклами -->
+        <div id="output"></div>
+        <script>
+            const n = 15;
+            let count = n + 5;
+            let i = 0;
+            let output = document.getElementById("output");
+            let result = '';
+            while (i < count) {
+                result += "Пузан Артём<br>";
+                i++;
+            }
+            output.innerHTML = result;
+        </script>
+    
+        <hr>
+    
+        <!-- Задание 3: Работа с массивом -->
+        <div id="arrayOutput"></div>
+        <script>
+            const array = [12, -3, 45, -22, 18, -7, 30, -50, 5, -1];
+            const negativeArray = array.filter(num => num < 0);
+            const sortedArray = [...array].sort((a, b) => b - a);
+    
+            let arrayOutput = document.getElementById("arrayOutput");
+            arrayOutput.innerHTML = `
+                Исходный массив: ${array.join(', ')}<br>
+                Отрицательные элементы: ${negativeArray.join(', ')}<br>
+                Отсортированный массив: ${sortedArray.join(', ')}
+            `;
+        </script>
+    
+        <hr>
+    
+        <!-- Задание 4: Работа с Math, результат будет отображен в данном элементе -->
+        <div>
+            <label for="a">Введите a:</label>
+            <input type="text" id="a" name="a">
+            <br>
+            <label for="x">Введите x:</label>
+            <input type="text" id="x" name="x">
+            <br>
+            <label for="b">Введите b:</label>
+            <input type="text" id="b" name="b">
+            <br>
+            <label for="c">Введите c:</label>
+            <input type="text" id="c" name="c">
+            <br>
+            <button onclick="calculateFromInput()">Вычислить</button>
+        </div>
+        <div id="mathOutput"></div>
+    
+        <hr>
+    
+        <!-- Задание 5: Работа со строками -->
+        <div id="stringOutput"></div>
+        <script>
+            const s1 = "Пузан";
+            const s2 = "ул. Пушкина, д. Колотушкина";
+            const lengthS1 = s1.length;
+            const concatenated = s1 + " " + s2;
+            const upperS2 = s2.toUpperCase();
+    
+            let stringOutput = document.getElementById("stringOutput");
+            stringOutput.innerHTML = `
+                Длина строки S1: ${lengthS1}<br>
+                Сцепленные строки: ${concatenated}<br>
+                S2 в верхнем регистре: ${upperS2}
+            `;
+        </script>
+    <!-- Альтернативный способ навигации с помощью кнопок -->
+    <button onclick="window.location.href='texkontrol.html';">техконтроль</button>
+    <button onclick="window.location.href='scripttttt.html';">индивидульное Задание</button>
+</style>
+
+    </body>
+    </html>

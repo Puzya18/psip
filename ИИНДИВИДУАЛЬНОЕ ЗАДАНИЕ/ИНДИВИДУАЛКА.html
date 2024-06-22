@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выполнение заданий</title>
+    <script>
+        function showCurrentMinutes() {
+            const now = new Date();
+            const minutes = now.getMinutes();
+            alert("Текущее количество минут: " + minutes);
+        }
+
+        function calculate(a, x, b, c) {
+            let y;
+
+            if (a < 0 && c !== 0) {
+                y = a * Math.pow(x, 2) + a * b + c;
+            } else if (a > 0 && c === 0) {
+                if (x === c) {
+                    alert("Ошибка: деление на ноль");
+                    return;
+                }
+                y = -a / (x - c);
+            } else {
+                y = a * (x + c);
+            }
+
+            return y;
+        }
+
+        function calculateFromInput() {
+            const a = parseFloat(document.getElementById('a').value);
+            const x = parseFloat(document.getElementById('x').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const c = parseFloat(document.getElementById('c').value);
+
+            if (isNaN(a) || isNaN(x) || isNaN(b) || isNaN(c)) {
+                alert("Пожалуйста, введите корректные числовые значения.");
+                return;
+            }
+
+            const result = calculate(a, x, b, c);
+            document.getElementById('mathOutput').innerHTML = `Результат вычислений: ${result}`;
+        }
+
+        window.onload = function() {
+            // Пример вызова функции для демонстрации
+            // document.getElementById('mathOutput').innerHTML = `Пример: ${calculate(-2, 4, 3, 5)}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Выполнение заданий</h1>
+
+    <!-- Задание 1: Работа с объектом Date -->
+    <button onclick="showCurrentMinutes()">Показать текущее количество минут</button>
+
+    <hr>
+
+    <!-- Задание 2: Работа с циклами -->
+    <div id="output"></div>
+    <script>
+        const n = 15;
+        let count = n + 5;
+        let i = 0;
+        let output = document.getElementById("output");
+        let result = '';
+        while (i < count) {
+            result += "Пузан Артём<br>";
+            i++;
+        }
+        output.innerHTML = result;
+    </script>
+
+    <hr>
+
+    <!-- Задание 3: Работа с массивом -->
+    <div id="arrayOutput"></div>
+    <script>
+        const array = [12, -3, 45, -22, 18, -7, 30, -50, 5, -1];
+        const negativeArray = array.filter(num => num < 0);
+        const sortedArray = [...array].sort((a, b) => b - a);
+
+        let arrayOutput = document.getElementById("arrayOutput");
+        arrayOutput.innerHTML = `
+            Исходный массив: ${array.join(', ')}<br>
+            Отрицательные элементы: ${negativeArray.join(', ')}<br>
+            Отсортированный массив: ${sortedArray.join(', ')}
+        `;
+    </script>
+
+    <hr>
+
+    <!-- Задание 4: Работа с Math, результат будет отображен в данном элементе -->
+    <div>
+        <label for="a">Введите a:</label>
+        <input type="text" id="a" name="a">
+        <br>
+        <label for="x">Введите x:</label>
+        <input type="text" id="x" name="x">
+        <br>
+        <label for="b">Введите b:</label>
+        <input type="text" id="b" name="b">
+        <br>
+        <label for="c">Введите c:</label>
+        <input type="text" id="c" name="c">
+        <br>
+        <button onclick="calculateFromInput()">Вычислить</button>
+    </div>
+    <div id="mathOutput"></div>
+
+    <hr>
+
+    <!-- Задание 5: Работа со строками -->
+    <div id="stringOutput"></div>
+    <script>
+        const s1 = "Пузан";
+        const s2 = "ул. Пушкина, д. Колотушкина";
+        const lengthS1 = s1.length;
+        const concatenated = s1 + " " + s2;
+        const upperS2 = s2.toUpperCase();
+
+        let stringOutput = document.getElementById("stringOutput");
+        stringOutput.innerHTML = `
+            Длина строки S1: ${lengthS1}<br>
+            Сцепленные строки: ${concatenated}<br>
+            S2 в верхнем регистре: ${upperS2}
+        `;
+    </script>
+</body>
+</html>
