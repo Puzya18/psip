@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Центр здоровья и лечения волос в Волгограде</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+            .header .logo img {
+                height: 50px;
+            }
+
+            .header nav a {
+                margin-left: 20px;
+                text-decoration: none;
+                color: #333;
+                font-size: 1em;
+            }
+
+            .header .address {
+                font-size: 1em;
+                color: #000000;
+                margin-right: -300px; /* Adjust as needed */
+            }
+
+            .header .cta {
+                background-color: #d1a475;
+                color: rgb(255, 255, 255);
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 50px;
+            box-sizing: border-box;
+            height: calc(90vh - 0px);
+            margin-top: -90px;
+        }
+
+        .left-image {
+            width: 25%;
+        }
+
+            .left-image img {
+                width: 100%;
+                height: 70%;
+            }
+
+        .content {
+            text-align: left;
+            width: 30%;
+            height: 70%;
+            margin: 0 20px;
+            padding: 20px;
+            border: 2px solid #d1a475;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .content h1 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+
+            .content p {
+                font-size: 1em;
+                margin-bottom: 20px;
+                color: #555;
+            }
+
+        .button {
+            width: 190px;
+            height: 20px;
+            display: inline-block;
+            padding: 10px 10px;
+            background-color: #d1a475;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .right-image {
+            width: 57.5%;
+        }
+
+            .right-image img {
+                width: 100%;
+                height: auto;
+            }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            background-color: #ffffff;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            width: 30%;
+            text-align: center;
+            margin-right: 120px;
+        }
+
+            .about-image img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+            }
+
+        .about-content {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 20px;
+        }
+
+            .about-content h2 {
+                font-size: 2em;
+                margin-bottom: 20px;
+                color: #d1a475;
+            }
+
+            .about-content p {
+                font-size: 1em;
+                color: #555;
+                line-height: 1.6;
+                text-align: left;
+                margin: 0;
+            }
+
+        .consultation-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            background-color: #ffffff;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .consultation-left {
+            width: 30%;
+        }
+
+            .consultation-left h2 {
+                font-size: 2em;
+                color: #d1a475;
+            }
+
+            .consultation-left p {
+                font-size: 1em;
+                color: #555;
+                line-height: 1.6;
+            }
+
+        .consultation-right {
+            width: 65%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .consultation-item {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+            .consultation-item img {
+                width: 70px;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+
+            .consultation-item p {
+                font-size: 1em;
+                color: #555;
+                text-align: center;
+                margin: 0;
+                font-weight: bold;
+            }
+
+        .treatment-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            background-color: #f9f4ee;
+            width: 94%;
+            margin: 0 auto;
+        }
+
+        .treatment-left {
+            width: 40%;
+        }
+
+            .treatment-left h2 {
+                font-size: 2.5em;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            .treatment-left p {
+                font-size: 1.2em;
+                color: #555;
+                line-height: 1.6;
+            }
+
+        .treatment-right {
+            width: 55%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .treatment-card {
+            width: 20%;
+            height: 230px;
+            padding: 13px;
+            background-color: #d1a475;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border: none;
+        }
+
+        .treatment-card-inner {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border: 2px solid white;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+
+        .treatment-card p {
+            font-size: 1.1em;
+            margin: 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .results-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+            .results-section h2 {
+                font-size: 2em;
+                color: #d1a475;
+                margin-bottom: 20px;
+                text-align: left;
+            }
+
+        .results-carousel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+            .results-carousel img {
+                width: 100%;
+                height: auto;
+            }
+
+        .results-item {
+            width: calc(30% - 25px);
+            margin: 0 50px;
+            text-align: left;
+        }
+
+            .results-item p {
+                font-size: 1em;
+                color: #555;
+                margin-top: 5px;
+            }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+            .carousel-controls .text {
+                font-size: 2em;
+                font-weight: bold;
+                color: #d1a475;
+                margin-right: 1300px;
+            }
+
+            .carousel-controls button {
+                background-color: #d1a475;
+                border: none;
+                color: white;
+                padding: 11px;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 1em;
+                margin-right: 40px;
+            }
+
+        .footer {
+            background-color: #d1a475;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+            .footer .contacts {
+                display: flex;
+                flex-direction: column;
+                margin-right: 20px;
+            }
+
+                .footer .contacts p {
+                    font-size: 1.2em;
+                    margin: 5px 0;
+                }
+
+            .footer .address {
+                margin-right: 20px;
+            }
+
+            .footer .cta {
+                background-color: #fff;
+                color: #d1a475;
+                padding: 10px 40px;
+                border-radius: 10px;
+                text-decoration: none;
+                margin-right: px;
+            }
+
+            .footer .line {
+                width: 100%;
+                border-top: 1px dotted #fff;
+                margin: 20px 0;
+            }
+
+            .footer .column {
+                flex: 1;
+                padding: 0 20px;
+                min-width: 200px; /* Ensure minimum width for each column */
+                align-self: flex-start; /* Align columns to the top */
+            }
+
+                .footer .column h3 {
+                    font-size: 1.2em;
+                    margin-bottom: 10px;
+                }
+
+                .footer .column p,
+                .footer .column a {
+                    font-size: 1em;
+                    color: white;
+                    text-decoration: none;
+                    line-height: 1.6;
+                }
+
+            .footer .schedule {
+                border: 2px solid white;
+                padding: 10px;
+                text-align: center;
+            }
+
+                .footer .schedule h3 {
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+
+                .footer .schedule p {
+                    text-align: left;
+                    margin: 5px 0;
+                }
+
+                .footer .schedule .line {
+                    border-top: 2px solid white;
+                    margin: 10px 0;
+                }
+        /* Popup styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 500px;
+            max-width: 80%;
+            text-align: center;
+        }
+
+            .popup-content h2 {
+                margin-top: 0;
+                color: #333;
+            }
+
+            .popup-content form input[type="text"],
+            .popup-content form input[type="tel"] {
+                width: 90%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .popup-content form button {
+                background-color: #d1a475;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .popup-content .close {
+                background-color: #d1a475;
+                color: white;
+                padding: 5px 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                float: right;
+                margin-top: -10px;
+                margin-right: -10px;
+            }
+        /* Back to top button */
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 21px;
+            background-color: #ffffff;
+            color: white;
+            padding: 0px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+            .back-to-top img {
+                width: 50px;
+                height: 50px;
+            }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="logotip.PNG" alt="Логотип"> <!-- Placeholder for the logo image -->
+        </div>
+        <nav>
+            <a href="#main">Главная</a>
+            <a href="#specialists">Наши специалисты</a>
+            <a href="#treatments">Процедуры лечения волос</a>
+            <a href="#results">Средства для лечения волос</a>
+        </nav>
+        <div class="address">ул. Карла Маркса</div> <!-- Added address -->
+        <a href="#" class="cta" onclick="openPopup()">Запись на прием</a>
+    </div>
+    <div id="main" class="container">
+        <div class="left-image">
+            <img src="levayafotka.PNG" alt="Left Image"> <!-- Placeholder for the left image -->
+        </div>
+        <div class="content">
+            <h1>Центр здоровья и лечения волос в Волгограде</h1>
+            <p>Самый современный трихологический центр в Волгоградской области, открытый в 2012 году</p>
+            <a href="#" class="button">ПРОЦЕДУРЫ ЛЕЧЕНИЯ</a>
+        </div>
+        <div class="right-image">
+            <img src="rightimage.PNG" alt="Right Image"> <!-- Placeholder for the right image -->
+        </div>
+    </div>
+
+    <div id="specialists" class="about-section">
+        <div class="about-image">
+            <img src="2blok.PNG" alt="О центре"> <!-- Placeholder for the about section image -->
+        </div>
+        <div class="about-content">
+            <h2>О центре</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices dictum et aliquet sit luctus mauris elementum interdum. Interdum id in viverра metus, dignissim arcu
+                nisi porttitor. Non, condimentum morbi porttitor nec mauris vitae consequat mi. Viverра non pellentesque id blandit gravida tristique. Non blandit rhoncus libero in diam cras sapien elementum tristique. At id viverра nullam tincidunt urna dis venenatis.
+            </p>
+            <br>
+            <p>At hendrerit pretium turpis leo sem quam in nibh egestas. Nulla vitae, mollis enim tincidunt vitae. Lorem sed morbi sem donec nulla. Risus nullam lacus, velit, amet volutpat. Blandit at risus proin adipiscing orci plateа praesent. Quisque turpis purus est egestas nunc, facilisi. Ut in.</p>
+        </div>
+    </div>
+
+    <div id="consultation" class="consultation-section">
+        <div class="consultation-left">
+            <h2>Консультации по вопросам</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur<br> adipiscing elit. Molestie est lorem commodo in<br> egestas pellentesque ut. Elit nisl a amet.</p>
+        </div>
+        <div class="consultation-right">
+            <div class="consultation-item">
+                <img src="1.PNG" alt="Icon 1"> <!-- Placeholder for the icon -->
+                <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus.</strong></p>
+            </div>
+            <div class="consultation-item">
+                <img src="1.PNG" alt="Icon 2"> <!-- Placeholder for the icon -->
+                <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis.</strong></p>
+            </div>
+            <div class="consultation-item">
+                <img src="1.PNG" alt="Icon 3"> <!-- Placeholder for the icon -->
+                <p><strong>Gravida tortor ac ornare convallis.</strong></p>
+            </div>
+            <div class="consultation-item">
+                <img src="2.PNG" alt="Icon 4"> <!-- Placeholder for the icon -->
+                <p><strong>Gravida tortor ac ornare convallis.</strong></p>
+            </div>
+            <div class="consultation-item">
+                <img src="3.PNG" alt="Icon 5"> <!-- Placeholder for the icon -->
+                <p><strong>Gravida tortor ac ornare convallis.</strong></p>
+            </div>
+            <div class="consultation-item">
+                <img src="4.PNG" alt="Icon 5"> <!-- Placeholder for the icon -->
+                <p><strong>Gravida tortor ac ornare convallis.</strong></p>
+            </div>
+            <div class="consultation-item">
+                <img src="1.PNG" alt="Icon 6"> <!-- Placeholder for the icon -->
+                <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi mi.</strong></p>
+            </div>
+            <div class="consultation-item">
+                <img src="5.PNG" alt="Icon 7"> <!-- Placeholder for the icon -->
+                <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a malesuada suspendisse.</strong></p>
+            </div>
+            <div class="consultation-item">
+                <img src="1.PNG" alt="Icon 8"> <!-- Placeholder for the icon -->
+                <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a malesuada suspendisse.</strong></p>
+            </div>
+        </div>
+    </div>
+    <div id="treatments" class="treatment-section">
+        <div class="treatment-left">
+            <h2>Процедуры лечения волос</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod faucibus arcu fames eu nunc lectus semper convallis. Elementum pretium, risus nec in magna in. Interdum diam sit adipiscing arcu, ut condimentum tincidunt. Bibendum eu consequat risus justo fringilla pretium blandit bibendum. In orci, et risus ultrices urna lacus lectus condimentum. Maecenas sagittis, morbi porta nisl. Sed pellentesque donec ultrices nisi.</p>
+        </div>
+        <div class="treatment-right">
+            <div class="treatment-card">
+                <div class="treatment-card-inner">
+                    <p>PRP-ТЕРАПИЯ</p>
+                </div>
+            </div>
+            <div class="treatment-card">
+                <div class="treatment-card-inner">
+                    <p>МЕЗОТЕРАПИЯ</p>
+                </div>
+            </div>
+            <div class="treatment-card">
+                <div class="treatment-card-inner">
+                    <p>ОЗОНОТЕРАПИЯ</p>
+                </div>
+            </div>
+            <div class="treatment-card">
+                <div class="treatment-card-inner">
+                    <p>ФИЗИОТЕРАПИЯ</п>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="results" class="results-section">
+        <div class="carousel-controls">
+            <span class="text">Результаты лечения</span>
+            <button>&lt;</button>
+            <button>&gt;</button>
+        </div>
+        <div class="results-carousel">
+            <div class="results-item">
+                <img src="volosi.PNG" alt="Before Treatment 1">
+                <p>Лечение гнездной аллопеции</p>
+            </div>
+            <div class="results-item">
+                <img src="volosi.PNG" alt="Before Treatment 2">
+                <p>Лечение гнездной аллопеции</p>
+            </div>
+            <div class="results-item">
+                <img src="volosi.PNG" alt="Before Treatment 3">
+                <п>Лечение гнездной аллопеции</п>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="contacts">
+            <p>8 (812) 123-45-67</p>
+            <p>8 (812) 123-45-67</p>
+        </div>
+        <div class="address">
+            <p>191123, г. Санкт-Петербург, Невский проспект, д. 11</п>
+        </div>
+        <a class="cta" onclick="openPopup()">Запись на прием</a>
+        <div class="line"></div>
+        <div class="column">
+            <h3>Основные ссылки</h3>
+            <a href="#specialists">Наши специалисты<br></a>
+            <a href="#consultation">Консультация трихолога<br></a>
+            <a href="#treatments">Фототрихограмма<br></a>
+        </div>
+        <div class="column">
+            <h3>Процедуры</h3>
+            <a href="#treatments">PRP-терапия<br></a>
+            <a href="#treatments">Мезотерапия<br></a>
+            <a href="#treatments">Озонотерапия<br></a>
+            <a href="#treatments">Физиотерапия<br></a>
+        </div>
+        <div class="column">
+            <h3>Средства для лечения</h3>
+            <a>Азеломакс / Азелофеин<br></a>
+            <a>Спектрал - ДНС (Spectral - DNC)<br></a>
+            <a>
+                Simone (Симоне)<br></а>
+                <a>
+                    Экапил<br></а>
+                    <а>Фабao - 101<br></а>
+                    <a>
+                        Сатура<br></а>
+                        <а>Оптима<br></а>
+        </div>
+        <div class="column">
+            <h3>Средства для лечения</h3>
+            <a>
+                Кудзитол<br></а>
+                <а>Ревивексил<br></а>
+                <а>Ревивоген<br></а>
+                <h3>Для бровей и ресниц</h3>
+                <а>Revita.EPS (Ревита)<br></а>
+                <а>Priori (Приори)<br></а>
+        </div>
+        <div class="column schedule">
+            <h3>Режим работы</h3>
+            <а>Понедельник – Пятница 11:00 – 21:00</а>
+            <а>Суббота 11:00 – 19:00<br></а>
+            <div class="line"></div>
+            <а><br>Воскресенье и дни Государственных праздников – выходной день.</а>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close" onclick="closePopup()">×</button>
+            <h2>Запись на приём</h2>
+            <а>Перезвоним в рабочее время в течение часа и проконсультируем по вашей ситуации</а>
+            <form>
+                <input type="text" placeholder="Имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <button type="submit">Запись на приём</button>
+            </form>
+            <а><br></а>
+            <а>Отправляя заявку вы даете согласие на обработку ваших персональных данных</а>
+        </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <img src="strelka vverh.png" alt="Стрелка вверх"> <!-- Placeholder for the arrow image -->
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Show or hide the back to top button
+        window.onscroll = function () {
+            var backToTopButton = document.getElementById('backToTop');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        };
+
+        // Scroll to top function
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
